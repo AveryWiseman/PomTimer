@@ -1,0 +1,16 @@
+import time
+
+def pomodoro_timer(work_duration=25, break_duration=5):
+    print("Pomodoro session started! Work for", work_duration, "minutes.")
+    time.sleep(work_duration * 60)  # Convert minutes to seconds
+    print("\nTime for a break! Take", break_duration, "minutes off.")
+    time.sleep(break_duration * 60)
+    print("\nBreak over. Get back to work!")
+
+if __name__ == "__main__":
+    try:
+        work_duration = int(input("Enter work duration in minutes (default 25): ") or 25)
+        break_duration = int(input("Enter break duration in minutes (default 5): ") or 5)
+        pomodoro_timer(work_duration, break_duration)
+    except ValueError:
+        print("Please enter a valid number.")
